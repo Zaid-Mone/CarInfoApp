@@ -1,0 +1,6 @@
+services:
+  carinfoapp:
+    image: ${DOCKER_REGISTRY-}carinfoapp
+    build:
+      context: .
+      dockerfile: CarInfoApp/Dockerfile
