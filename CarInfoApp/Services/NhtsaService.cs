@@ -26,7 +26,7 @@ public class NhtsaService : INhtsaService
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                var apiResponse = JsonConvert.DeserializeObject<CarMakeResponse>(content);
+                var apiResponse = JsonConvert.DeserializeObject<CarsResponse<CarMake>>(content);
 
                 if (apiResponse?.Results != null)
                 {
@@ -71,7 +71,7 @@ public class NhtsaService : INhtsaService
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                var apiResponse = JsonConvert.DeserializeObject<VehicleTypeResponse>(content);
+                var apiResponse = JsonConvert.DeserializeObject<CarsResponse<VehicleType>>(content);
 
                 if (apiResponse?.Results != null)
                 {
@@ -116,7 +116,7 @@ public class NhtsaService : INhtsaService
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                var apiResponse = JsonConvert.DeserializeObject<CarModelResponse>(content);
+                var apiResponse = JsonConvert.DeserializeObject<CarsResponse<CarModel>>(content);
 
                 if (apiResponse?.Results != null)
                 {
